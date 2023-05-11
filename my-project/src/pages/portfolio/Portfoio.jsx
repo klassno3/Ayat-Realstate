@@ -1,0 +1,10 @@
+import React from 'react'
+const Portfoio = () => {
+  return (
+    <div>
+    </div>
+  )
+}
+
+export default Portfoio
+// url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8c3ZnIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGZpbGw9IiNGMkY0RjgiIGQ9Ik01Ny45LC00OEM3MS4zLC0yOS40LDc1LjgsLTUuNiw2OS4zLDEzQzYyLjgsMzEuNSw0NS4zLDQ0LjcsMjYuNiw1Mi43QzcuOSw2MC43LC0xMiw2My41LC0yNy42LDU2LjRDLTQzLjIsNDkuMiwtNTQuNCwzMi4xLC01NiwxNS41Qy01Ny41LC0xLC00OS41LC0xNywtMzguNSwtMzVDLTI3LjYsLTUzLC0xMy44LC03Myw0LjIsLTc2LjRDMjIuMywtNzkuOCw0NC42LC02Ni42LDU3LjksLTQ4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAwIDEwMCkiIC8+Cjwvc3ZnPgo=")

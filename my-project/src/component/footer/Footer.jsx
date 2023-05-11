@@ -1,0 +1,151 @@
+import React from 'react'
+import LogoGreen from "../../images/Logo-white.svg"
+import {FaPhone} from "react-icons/fa"
+import { FaMailBulk } from "react-icons/fa"
+import { FaFacebook } from "react-icons/fa"
+import { FaTwitter } from "react-icons/fa"
+import { FaInstagram} from "react-icons/fa"
+import { FaYoutube} from "react-icons/fa"
+import {useState,useEffect} from "react"
+import { useLocation } from "react-router-dom"
+import { Link } from "react-router-dom"
+
+const Footer = () => {
+
+  const location = useLocation()
+  const [ selectedTab, setSelectedTab ] = useState( "home" )
+  
+  useEffect( () => {
+    if ( location.pathname === "/" ) {
+      setSelectedTab("home")
+    }
+    else if ( location.pathname === "/aboutUs" ) {
+      setSelectedTab("aboutUs")
+    }
+    else if ( location.pathname === "/contactUs" ) {
+      setSelectedTab("contactUs")
+    }
+    else if ( location.pathname === "/portfolio" ) {
+      setSelectedTab("portfolio")
+    }
+    else if ( location.pathname === "/register" ) {
+      setSelectedTab("register")
+    }
+    else if ( location.pathname === "/priceinfo" ) {
+      setSelectedTab("priceinfo")
+    }
+  },[location.pathname])
+  
+  return (
+    <div className='footer'>
+          
+        <div className="bg-secondary-100 pt-10">
+      <div className=" w-[1200px] mx-auto  ">
+      <img src={ LogoGreen } className="w-14 h-14 " alt="Logo" />
+          <div className='border-t-[.5px] border-t-secondary-200 w-full my-4'>
+          </div>
+          <div className='flex justify-between'>
+
+          <div className="flex flex-col gap-1  text-tertiary-100">
+            <p>Main Office – CCE (CMC)</p>
+            <p>Monday – Saturday</p>
+            <p>8:30 AM – 5:30 PM</p>
+            <p>Address CMC (at the back of Michael church)</p>
+            <div className='flex gap-2 flex-col'>
+
+            <div className='flex gap-2 items-center '>
+              <FaPhone size={15} className='text-tertiary-100' />
+            <p>+251 (0) 977 60 60 60</p>
+            </div>
+            <div className='flex gap-2 items-center'>
+              <FaPhone size={15} className='text-tertiary-100' />
+            <p>+251 (0) 976 60 60 60</p>
+            </div>
+            <div className='flex gap-2 items-center '>
+              <FaPhone size={15} className='text-tertiary-100' />
+            <p>+251 (0) 11 55 11 976</p>
+            </div>
+            <div className='flex gap-2 items-center '>
+              <FaMailBulk size={15} className='text-tertiary-100' />
+            <p>+3372</p>
+            </div>
+            </div>
+          </div>
+          <div className="right">
+            <div className="links  text-tertiary-100 flex flex-col gap-3 items-start">
+              <Link to="./" onClick={() => setSelectedTab('Home')} className={`group ${
+                selectedTab === 'home' ? 'font-semibold' : ''
+              }` }>
+              Home
+              <div className={`border-b-4 border-solid opacity-0 border-primary-200 rounded-lg w-1/2 group-hover:opacity-100 ${selectedTab === 'home' ? "opacity-100" : ''}` }></div>
+              </Link>
+              <Link to="./news" onClick={() => setSelectedTab('aboutUs')} className={`group ${
+              selectedTab === 'aboutUs' ? 'font-semibold' : ''
+              }` }>
+              News
+              <div className={ `border-b-4 border-solid opacity-0 border-primary-200 rounded-lg w-1/2 
+              group-hover:opacity-100 ${ selectedTab === 'news' ? "opacity-100" : '' }` }></div>
+
+              </Link>
+              <Link to="./contactUs" onClick={() => setSelectedTab('contactUs')} className={`group ${
+                selectedTab === 'contactUs' ? 'font-semibold' : ''
+              }` }>
+              Contact Us
+              <div className={ `border-b-4 border-solid opacity-0 border-primary-200 rounded-lg w-1/2 
+              group-hover:opacity-100 ${ selectedTab === 'contactUs' ? "opacity-100" : '' }` }></div>
+
+              </Link>
+              <Link to="./portfolio"  onClick={() => setSelectedTab('portfolio')}className={`group ${
+                selectedTab === 'portfolio' ? 'font-semibold' : ''
+              }` }>
+              Portfolio
+              <div className={ `border-b-4 border-solid opacity-0 border-primary-200 rounded-lg w-1/2 
+              group-hover:opacity-100 ${ selectedTab === 'portfolio' ? "opacity-100" : '' }` }></div>
+
+                </Link>
+                <Link to="./priceinfo" onClick={() => setSelectedTab('priceinfo')} className={`group ${
+              selectedTab === 'priceinfo' ? 'font-semibold' : ''
+              }` }>
+              Download Price information
+              <div className={ `border-b-4 border-solid opacity-0 border-primary-200 rounded-lg w-1/5 
+              group-hover:opacity-100 ${ selectedTab === 'priceinfo' ? "opacity-100" : '' }` }></div>
+
+            </Link>
+            
+            <Link to="./register" className={ `bg-primary-200 shadow-lg px-10 h-10 py-5 text-tertiary flex items-center  rounded-md  tracking-wide ${ selectedTab === 'register' ? 'font-semibold' : ''}` }>REGISTER</Link>
+           
+        </div>
+           
+              </div>
+          </div>
+          <div className='border-t-[.5px]  border-t-secondary-200 w-full my-4'></div>
+          <div className="flex flex-col gap-5">
+
+          <div className='flex justify-center gap-4'>
+
+            <a href="" >
+            <FaFacebook className="text-tertiary-100 hover:text-primary-200" size={ 25 } />
+            </a>
+             <a href="" >
+            <FaInstagram className="text-tertiary-100 hover:text-primary-200" size={ 25 } />
+            </a>
+             <a href="" >
+            <FaTwitter  className="text-tertiary-100 hover:text-primary-200" size={25}/>
+            </a>
+             <a href="" >
+            <FaYoutube  className="text-tertiary-100 hover:text-primary-200" size={25}/>
+            </a>
+          </div>
+          <p className='flex justify-center mb-4 text-tertiary-100'>
+            © Ayat Real Estate 2020. All rights reserved.
+          </p>
+          </div>
+      </div>
+      </div>
+    </div>
+    
+
+  )
+}
+
+export default Footer
