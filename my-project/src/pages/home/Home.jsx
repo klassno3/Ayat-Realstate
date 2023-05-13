@@ -69,7 +69,7 @@ const Home = () => {
               <FaEye size={ 20 } />
               <span className=''>
               
-              READ MORE
+                READ<span>{ open ? " LESS ": " MORE"}</span> 
               </span>
           </div>
             
@@ -112,11 +112,11 @@ const Home = () => {
       
       
 
-        <div className=" w-full  pb-32 z-10 ">
+        <div className=" w-full  pb-20                                 z-10 ">
           
           
           <div className='w-[1200px] mx-auto '>
-            <h1 className='flex justify-center text-2xl text-secondary-100 py-8'>News</h1>
+            <h1 className='flex justify-center text-2xl text-secondary-100 py-14'>News</h1>
         
          
             <Slider slidesToShow={3} pauseOnHover  autoplay swipe  >
@@ -159,7 +159,7 @@ const Home = () => {
             <div className="slide  w-11/12 relative">
                 <div className='relative h-full'>
                   <img src={ Mall } alt="" className='w-full h-64' />
-                    <div className="absolute bg-black/50 top-0 left-0 w-full h-full"></div>
+                    <div className="absolute bg-secondary-100/50 top-0 left-0 w-full h-full"></div>
                 </div>
                 <h1 className='text-tertiary-100 text-xl absolute  bottom-0 left-0 bg-secondary-100/80 w-full px-5  py-7'>
                Kazanchis Mall Sold Out</h1>

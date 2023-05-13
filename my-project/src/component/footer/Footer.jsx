@@ -4,7 +4,6 @@ import {FaPhone} from "react-icons/fa"
 import { FaMailBulk } from "react-icons/fa"
 import { FaFacebook } from "react-icons/fa"
 import { FaTwitter } from "react-icons/fa"
-import { FaInstagram} from "react-icons/fa"
 import { FaYoutube} from "react-icons/fa"
 import {useState,useEffect} from "react"
 import { useLocation } from "react-router-dom"
@@ -25,7 +24,7 @@ const Footer = () => {
     else if ( location.pathname === "/contactUs" ) {
       setSelectedTab("contactUs")
     }
-    else if ( location.pathname === "/portfolio" ) {
+   else if ( location.pathname.startsWith("/portfolio")) {
       setSelectedTab("portfolio")
     }
     else if ( location.pathname === "/register" ) {
@@ -95,7 +94,7 @@ const Footer = () => {
               group-hover:opacity-100 ${ selectedTab === 'contactUs' ? "opacity-100" : '' }` }></div>
 
               </Link>
-              <Link to="./portfolio"  onClick={() => setSelectedTab('portfolio')}className={`group ${
+              <Link to="./portfolio/ayat-hill"  onClick={() => setSelectedTab('portfolio')}className={`group ${
                 selectedTab === 'portfolio' ? 'font-semibold' : ''
               }` }>
               Portfolio
@@ -112,7 +111,7 @@ const Footer = () => {
 
             </Link>
             
-            <Link to="./register" className={ `bg-primary-200 shadow-lg px-10 h-10 py-5 text-tertiary flex items-center  rounded-md  tracking-wide ${ selectedTab === 'register' ? 'font-semibold' : ''}` }>REGISTER</Link>
+            <Link to="./register" className={ `bg-primary-200 shadow-lg px-10 h-10 py-5 text-secondary-100 flex items-center  rounded-md  tracking-wide ${ selectedTab === 'register' ? 'font-semibold' : ''}` }>REGISTER</Link>
            
         </div>
            
@@ -123,16 +122,14 @@ const Footer = () => {
 
           <div className='flex justify-center gap-4'>
 
-            <a href="" >
+            <a href="https://www.facebook.com/ayatshareco/" >
             <FaFacebook className="text-tertiary-100 hover:text-primary-200" size={ 25 } />
             </a>
-             <a href="" >
-            <FaInstagram className="text-tertiary-100 hover:text-primary-200" size={ 25 } />
-            </a>
-             <a href="" >
+       
+             <a href="https://twitter.com/ayat_share_co?lang=en" >
             <FaTwitter  className="text-tertiary-100 hover:text-primary-200" size={25}/>
             </a>
-             <a href="" >
+             <a href="https://www.youtube.com/@AyatRealEstate" >
             <FaYoutube  className="text-tertiary-100 hover:text-primary-200" size={25}/>
             </a>
           </div>

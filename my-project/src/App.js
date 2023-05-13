@@ -3,10 +3,15 @@ import Footer from "./component/footer/Footer"
 import ContactUs from "./pages/contactUs/ContactUs"
 import Home from "./pages/home/Home"
 import News from "./pages/news/News"
-import Portfolio from "./pages/portfolio/Portfoio.jsx"
 import Register from "./pages/register/Register"
 import PriceInfo from "./pages/price/PriceInfo"
 import { useState } from "react"
+import AyatApartment from "./pages/ayatApartment/AyatApartment.jsx"
+import CmcApartment from "./pages/cmcApartment/CmcApartment.jsx"
+import AyatHill from "./pages/ayatHill/AyatHill.jsx"
+import CmcBusiness from "./pages/cmcBusiness/CmcBusiness.jsx"
+
+
 import {
   createBrowserRouter,
   Outlet,
@@ -45,8 +50,20 @@ function App () {
           element:<PriceInfo/>,
         },
         {
-          path: "/portfolio",
-          element:<Portfolio/>,
+          path: "/portfolio/ayat-hill",
+          element:<AyatHill/>,
+        },
+        {
+          path: "/portfolio/cmc-business",
+          element:<CmcBusiness/>,
+        },
+        {
+          path: "/portfolio/cmc-apartment",
+          element:<CmcApartment/>,
+        },
+        {
+          path: "/portfolio/ayat-apartment",
+          element:<AyatApartment/>,
         },
         {
           path: "/register",
@@ -70,3 +87,4 @@ function App () {
 }
 
 export default App;
+

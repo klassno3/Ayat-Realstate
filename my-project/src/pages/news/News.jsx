@@ -33,7 +33,7 @@ const New = () => {
 
             We are pleased to announce that 22 Sales office, Merkato Sales office and Lideta Sales office have been relocated to Kazanchise Ayat City center 1st Floor, next to Intercontinental Hotel As of November 28, 2019. we are looking forward to seeing you at our new office.
             </p>
-            <button className='bg-primary-200 px-10 py-3 mt-6 text-tertiary-100 tracking-widest flex justify-center rounded-md '>READ MORE</button>
+            <button className='bg-primary-200 px-10 py-3 mt-6 text-secondary-100 tracking-widest flex justify-center rounded-md '>READ MORE</button>
           </div>
         </div>
       </div>
@@ -57,7 +57,7 @@ const New = () => {
                 
               </p>
               <p className={openCredit ? "block w-3/4" :"hidden" }>If you are one to pay in foreign currency there is an option for you to make a 20% down payment with an interest rate as low as 8.5% and make the payment of the remaining 80% within 20 years.</p>
-              <button onClick={()=> SetOpenCredit(!openCredit) } className='bg-primary-200 px-10 py-3 mt-6 text-tertiary-100 tracking-widest flex justify-center rounded-md '>READ MORE</button>
+              <button onClick={()=> SetOpenCredit(!openCredit) } className='bg-primary-200 px-10 py-3 mt-6 text-secondary-100 tracking-widest flex justify-center rounded-md '>READ MORE</button>
             
           </div>
           <div className="border-4 border-primary-200 rounded-md"></div>
@@ -82,7 +82,7 @@ const New = () => {
            We are also proud to announce our new project that is currently building and selling, a project expected to put a roof under many local Ethiopians and the Ethiopian diaspora community. Locating in one of Addiss’ top residential district, Ayat and CMC, this project is designed to suite different expectations of different home buyers.
             </p>
             <p className={openUpcomming ? "block w-3/4" :"hidden" }>This project has variety of building plans such as residential, mixed use, and G+1 Apartments. The residential buildings are 15 floored buildings where all floors are built for residential use only. The mixed use buildings are 15 floored buildings which are used for both residential and commercial use, floors ground to 3rd are used for commercial purposes where the remaining floors are used for residential. The G+1 apartment buildings are duplex units, all used for residential. As our project keeps to blossom, Ayat is working hard towards the delivery of more than 1000 units. Ayat invites you to be part of it community. Clients who are looking to be part of this community can purchase their homes at Ayats sales offices or at an official agent offices.</p>
-            <button onClick={()=> SetOpenUpcomming(!openUpcomming) } className='bg-primary-200 px-10 py-3 mt-6 text-tertiary-100 tracking-widest flex justify-center rounded-md '>READ MORE</button>
+            <button onClick={()=> SetOpenUpcomming(!openUpcomming) } className='bg-primary-200 px-10 py-3 mt-6 text-secondary-100 tracking-widest flex justify-center rounded-md '>READ MORE</button>
           </div>
         </div>
       </div>
@@ -105,7 +105,7 @@ const New = () => {
                 
               </p>
               <p className={openMall ? "block w-3/4" :"hidden" }> Ayat is in great awe to inform the community that this Kazanchis mall is now sold out.</p>
-            <button onClick={()=> SetOpenMall(!openMall) } className='bg-primary-200 px-10 py-3 mt-6 text-tertiary-100 tracking-widest flex justify-center rounded-md '>READ MORE</button>
+            <button onClick={()=> SetOpenMall(!openMall) } className='bg-primary-200 px-10 py-3 mt-6 text-secondary-100 tracking-widest flex justify-center rounded-md '>READ MORE</button>
             
           </div>
           <div className="border-4 border-primary-200 rounded-md"></div>
@@ -130,7 +130,7 @@ const New = () => {
           Ayat is excited to announce its new website launch, built by REVO Solutions PLC. In order to increase its digital channel Ayat has brought its client a website made easy to navigate and a site where clients can get all necessary information about their future home.
             </p>
             <p className={openNew ? "block w-3/4" :"hidden" }>The website has Floor plans showing different designs for different units, 3D videos showing both the interior and exterior of units that are selling, construction updates explaining the current construction stage, available products, all news on Ayat Real Estate and our contact information.</p>
-            <button onClick={()=> SetOpenNew(!openNew) } className='bg-primary-200 px-10 py-3 mt-6 text-tertiary-100 tracking-widest flex justify-center rounded-md '>READ MORE</button>
+            <button onClick={()=> SetOpenNew(!openNew) } className='bg-primary-200 px-10 py-3 mt-6 text-secondary-100 tracking-widest flex justify-center rounded-md '>READ MORE</button>
           </div>
         </div>
       </div>
