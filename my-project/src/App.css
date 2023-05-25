@@ -1,3 +1,3 @@
-body {
-  color:rgb(252, 252, 252);
+* {
+border: red solid 2px;
 }

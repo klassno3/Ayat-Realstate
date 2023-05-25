@@ -2,11 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 @layer components {
-.carousel-prev{
-  color: #fcf6ee;
-  width: 100px;
-  height: 100px;
-  background-color: aqua;
+input:invalid[focused=true] ~ span {
+ 
+  display: block;
+}
+input:valid ~ span {
+
+  display: none;
 }
 }
 

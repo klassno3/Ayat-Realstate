@@ -18,8 +18,8 @@ const Footer = () => {
     if ( location.pathname === "/" ) {
       setSelectedTab("home")
     }
-    else if ( location.pathname === "/aboutUs" ) {
-      setSelectedTab("aboutUs")
+    else if ( location.pathname === "/news" ) {
+      setSelectedTab("news")
     }
     else if ( location.pathname === "/contactUs" ) {
       setSelectedTab("contactUs")
@@ -38,18 +38,18 @@ const Footer = () => {
   return (
     <div className='footer'>
           
-        <div className="bg-secondary-100 pt-10">
-      <div className=" w-[1200px] mx-auto  ">
+        <div className="bg-secondary-100 py-10">
+      <div className=" px-5 mx-auto md:w-11/12 ">
       <img src={ LogoGreen } className="w-14 h-14 " alt="Logo" />
           <div className='border-t-[.5px] border-t-secondary-200 w-full my-4'>
           </div>
-          <div className='flex justify-between'>
+          <div className='flex  flex-col gap-10 justify-between md:flex-row '>
 
           <div className="flex flex-col gap-1  text-tertiary-100">
             <p>Main Office – CCE (CMC)</p>
             <p>Monday – Saturday</p>
             <p>8:30 AM – 5:30 PM</p>
-            <p>Address CMC (at the back of Michael church)</p>
+            <p className='w-3/4'>Address CMC (at the back of Michael church)</p>
             <div className='flex gap-2 flex-col'>
 
             <div className='flex gap-2 items-center '>
@@ -78,8 +78,8 @@ const Footer = () => {
               Home
               <div className={`border-b-4 border-solid opacity-0 border-primary-200 rounded-lg w-1/2 group-hover:opacity-100 ${selectedTab === 'home' ? "opacity-100" : ''}` }></div>
               </Link>
-              <Link to="./news" onClick={() => setSelectedTab('aboutUs')} className={`group ${
-              selectedTab === 'aboutUs' ? 'font-semibold' : ''
+              <Link to="./news" onClick={() => setSelectedTab('news')} className={`group ${
+              selectedTab === 'news' ? 'font-semibold' : ''
               }` }>
               News
               <div className={ `border-b-4 border-solid opacity-0 border-primary-200 rounded-lg w-1/2 
@@ -111,7 +111,10 @@ const Footer = () => {
 
             </Link>
             
-            <Link to="./register" className={ `bg-primary-200 shadow-lg px-10 h-10 py-5 text-secondary-100 flex items-center  rounded-md  tracking-wide ${ selectedTab === 'register' ? 'font-semibold' : ''}` }>REGISTER</Link>
+               <Link to="/register" className={ ` hover:scale-[1.03] bg-primary-200 shadow-lg px-10 h-10 py-5 uppercase text-secondary-100  flex items-center tracking-wider  rounded-md 
+            ${ selectedTab === 'register' ? 'font-semibold' : '' } ` }>Register
+            
+            </Link>
            
         </div>
            
@@ -133,7 +136,7 @@ const Footer = () => {
             <FaYoutube  className="text-tertiary-100 hover:text-primary-200" size={25}/>
             </a>
           </div>
-          <p className='flex justify-center mb-4 text-tertiary-100'>
+          <p className='justify-center mb-4 text-center hidden text-tertiary-100 md:flex'>
             © Ayat Real Estate 2020. All rights reserved.
           </p>
           </div>

@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-import Button from "../../component/button/Button";
+import React, {useState,useEffect} from 'react';
 import {FaEye} from "react-icons/fa"
 import HomePortfolio from '../../component/homePortfolio/HomePortfolio';
 import Credit from "../../images/Credit.jpg"
@@ -10,36 +9,138 @@ import New from "../../images/new.jpg"
 import Slider from 'infinite-react-carousel';
 import Background from "../../images/Background (2).png"
 import { Link } from 'react-router-dom';
+import { motion, variants } from "framer-motion"
+
+
+
 
 
 
 const Home = () => {
   const [ open, setOpen ] = useState( false )
-  
-  
+    
+ 
+  const [ col, setCol ] = useState( window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1 )
 
+  useEffect(()=>{
+    const handleSize = () => {
+      if ( window.innerWidth >= 1024 ) {
+        setCol( 3 )
+      }
+      else if ( window.innerWidth >= 768 ) {
+        setCol(2)
+      }
+      else {
+        setCol(1)
+      }
+    
+    }
+    window.addEventListener( "resize", handleSize )
+    return () => window.addEventListener( "resize", handleSize );
+  } )
+
+  const heroAnimate = {
+    offScreen:{x:-100},
+    onScreen: {
+      x:0,
+     transition :{ 
+              type: "spring",
+       bounce: .5,
+              duration:2,
+            } }
+  }
+
+  const aboutAnimate = {
+    offScreen:{y:100,opacity:0},
+    onScreen: {
+      y: 0,
+      opacity: 1,
+     transition :{ 
+              type: "spring",
+       bounce: .5,
+              duration:2,
+            } }
+  }
+  const leftCardAnimate = {
+    offScreen: {
+      x: -100,
+      opacity: 0
+    },
+    onScreen: {
+      x: 0,
+      opacity: 1,
+     transition :{ 
+              type: "spring",
+       bounce: .5,
+              duration:2,
+            } }
+  }
+  const middleCardAnimate = {
+    offScreen: {
+      y: 100,
+      opacity: 0
+    },
+    onScreen: {
+      y: 0,
+      opacity: 1,
+     transition :{ 
+              type: "spring",
+       bounce: .5,
+              duration:2,
+            } }
+  }
+  const rightCardAnimate = {
+    offScreen: {
+      x: 100,
+      opacity: 0
+    },
+    onScreen: {
+      x: 0,
+      opacity: 1,
+     transition :{ 
+              type: "spring",
+       bounce: .5,
+              duration:2,
+            } }
+  }
   
   return (
 
     <div>
        
       {/* ***************************************************HERO****************************************************** */ }
-      <div className='bg-secondary-100'>
+      <div className='bg-secondary-100 '>
 
-      <div className='flex w-11/12 mx-auto relative pb-24 pt-20 '>
-    <div className='  h-[60vh] pt-24 flex' >
+      <div className='relative px-3 pt-36 pb-20 lg:w-11/12 lg:mx-auto lg:pt-56 lg:pb-28'>
+          <motion.div className='flex justify-center '
+            transition={ {staggerChildren:0.1} }
+            initial={"offScreen"}
+            animate={"onScreen" }
+          
+       >
       <div>
-      <h1 className='  text-7xl flex  justify-start tracking-widest font-garmound text-tertiary-100'>AYAT REALSTATE</h1>
-      <p className='  text-xl mt-5 flex justify-start  w-2/5 text-tertiary-200 '>Welcome to Ayat share Company, a fully legislated real estate 
-        company based in Addis Ababa.Has handed 7,000+ Homes and Has handed 7,000+ Homes</p>
-      <div className="flex mt-14 gap-32 justify-start">
-      <Button type={"solid"} />
+              <motion.h1 className='  text-3xl flex mx-auto text-center justify-center  tracking-widest font-cinzel text-tertiary-100 lg:text-5xl xl:text-7xl lg:justify-start'
+               
+            variants={heroAnimate}
+              >AYAT REALSTATE</motion.h1>
+              <motion.p className='  mt-5 flex  justify-center w-4/5 mx-auto text-center  text-tertiary-200  font-lato lg:w-1/2 lg:justify-start lg:text-left lg:mx-0  xl:text-xl'
+               
+                variants={ heroAnimate }
+              >Welcome to Ayat share Company, a fully legislated real estate 
+        company based in Addis Ababa.Has handed 7,000+ Homes and Has handed 7,000+ Homes</motion.p>
+              <motion.div className="flex flex-col mt-8 gap-8 justify-center w-4/5 mx-auto sm:flex-row lg:justify-start lg:w-full xl:mt-10"
+               
+                variants={ heroAnimate }
+              >
+            <Link to="/register" className="bg-tertiary-100 border-2 border-tertiary-100  flex justify-center text-secondary-100 px-5 py-3 tracking-widest font-semibold focus:outline-none rounded-md xl:px-14 hover:bg-primary-100 hover:border-primary-100 duration-200 hover:scale-[1.03]">REGISTER NOW</Link>
+            <Link to="/priceinfo"className='border-2 border-tertiary-100  flex justify-center text-tertiary-100 px-5 py-3 tracking-widest font-semibold focus:outline-none rounded-md xl:px-14 hover:bg-primary-100 hover:border-primary-100 duration-200 hover:scale-[1.03]'>SHARE FORM</Link>
+     
+      </motion.div>
       </div>
-      </div>
-          </div>
-          <div className=''>
-            <img src={Blob} alt="" className='w-2/3 pt-24    absolute -top-14 -right-14'/> 
-            <img src={ Background } alt="" className='w-1/2 pt-32    absolute top-2 right-0' />
+          </motion.div>
+          <div className='hidden lg:block '>
+          
+            <img src={ Background } alt="" className='w-2/5 pt-32  absolute top-5 right-0 ' />
             
           </div>
           
@@ -49,22 +150,40 @@ const Home = () => {
 
           {/* ***************************************************ABOUT****************************************************** */}
       
-      {/* <img src={ Back } alt="" className='w-full -z-50  bg-red-700' /> */}
       
 
         
-      <div className=' bg-primary-200 py-20 z-50 '>
+      <motion.div className=' bg-tertiary-100 py-20 font-lato'
+        transition={ { staggerChildren: 0.1 } }
+        initial={ "offScreen" }
+        whileInView={ "onScreen" }
+        viewport={ {
+          once: true, amount:.5
+        } }
+        
+          
+      
+      >
 
-      <div className="w-[1200px] mx-auto text-secondary-100">
-        <h1 className="text-5xl mb-5 flex  mx-auto justify-center ">About Us</h1>
-        <p className='  text-center  w-11/12 mx-auto flex justify-center text-secondary-200'>Ayat® enjoys the distinction of being a trailblazer in the real estate industry, especially focusing on the construction of residential houses. With a groundbreaking and highly effective mix of Real Estate Development, Real Estate Construction, and Real Estate Finance, Ayat® is miles ahead of the competition. Given the risks taken during the pioneering years, in the virtually unknown market of realty and the rough and tumble of the followed twenty plus years, no wonder Ayat® is proud not only for being the torchbearer of the real estate industry but also for the solid experience it has in its pack.</p>
-       { open && (<div className="text-center w-11/12 mx-auto  text-secondary-200">
-        <p className="my-5 ">Ayat®, a fully Ethiopian owned and managed company, has made tens of hundreds of Ethiopians and Ethiopian diasporas, at home and abroad, proud homeowners in their native country. Envisages to put roof over the heads of thousands more in the years ahead. In the previous years, Ayat®has handed over more than 7,000 residential homes, 1,000 commercial outlets and created job opportunities for more than 15,000 Ethiopians</p>
-        <p className="my-5 ">The Developer is pleased to offer luxurious new apartments to potential home owners and create communities in some of the most sought after locations in Addis Ababa. With hundreds of villas, residential apartments, malls and tens of business outlets with various designs and styles to choose from located in Addis’s top school districts, business and residential area customers have more choice than they ever imagined. All buildings that have the touch of Ayat are thoughtfully designed, constructed and fitted with the wide range of needs and tastes in mind. Ayat® is not only known for building homes but for also creating, a rare occurrence by any standard, a very fulfilling community for its home buyers.</p>
+      <div className="px-3 mx-auto text-secondary-100">
+          <motion.h1 className="text-4xl mb-5 flex  mx-auto justify-center font-cinzel "
+          variants={aboutAnimate}
+          >About Us</motion.h1>
+          <motion.p className='  text-center  w-11/12 mx-auto flex justify-center text-secondary-100 font-lato'
+            variants={ aboutAnimate }
+          >Ayat® enjoys the distinction of being a trailblazer in the real estate industry, especially focusing on the construction of residential houses. With a groundbreaking and highly effective mix of Real Estate Development, Real Estate Construction, and Real Estate Finance, Ayat® is miles ahead of the competition. Given the risks taken during the pioneering years, in the virtually unknown market of realty and the rough and tumble of the followed twenty plus years, no wonder Ayat® is proud not only for being the torchbearer of the real estate industry but also for the solid experience it has in its pack.</motion.p>
+          { open && ( <div className="text-center w-11/12 mx-auto  text-secondary-100"
+           
+          >
+        <motion.p className="my-5 ">Ayat®, a fully Ethiopian owned and managed company, has made tens of hundreds of Ethiopians and Ethiopian diasporas, at home and abroad, proud homeowners in their native country. Envisages to put roof over the heads of thousands more in the years ahead. In the previous years, Ayat®has handed over more than 7,000 residential homes, 1,000 commercial outlets and created job opportunities for more than 15,000 Ethiopians</motion.p>
+        <motion.p className="my-5 ">The Developer is pleased to offer luxurious new apartments to potential home owners and create communities in some of the most sought after locations in Addis Ababa. With hundreds of villas, residential apartments, malls and tens of business outlets with various designs and styles to choose from located in Addis’s top school districts, business and residential area customers have more choice than they ever imagined. All buildings that have the touch of Ayat are thoughtfully designed, constructed and fitted with the wide range of needs and tastes in mind. Ayat® is not only known for building homes but for also creating, a rare occurrence by any standard, a very fulfilling community for its home buyers.</motion.p>
           </div> ) }
 
-            <button onClick={()=> setOpen(!open)} className=' mb-28 tracking-widest mt-5 font-semibold focus:outline-none flex justify-center mx-auto  items-center text-secondary-100   hover:text-secondary-200 '>
-                  <div className='flex justify-center  items-center gap-4 hover:text-secondary-200'>
+          <button onClick={ () => setOpen( !open ) } className=' duration-200 hover:scale-[1.03] font-lato  tracking-widest mt-5 font-semibold focus:outline-none flex justify-center mx-auto  items-center text-secondary-100   hover:text-secondary-200 lg:mb-28 '
+            
+         
+          >
+                  <div className='flex justify-center  items-center gap-4 hover:text-primary-100'>
              
               <FaEye size={ 20 } />
               <span className=''>
@@ -76,21 +195,39 @@ const Home = () => {
             </button>
    
         </div>
-      </div>
-      <div className='bg-tertiary-100'>
+      </motion.div>
+      
+      <motion.div className='bg-primary-100 py-8 overflow-x-hidden'
+       transition={ { staggerChildren: 0.1 } }
+        initial={ "offScreen" }
+        whileInView={ "onScreen" }
+        viewport={ {
+          once: true, amount:1
+        } }
+        >
+        
 
-     <div className="flex justify-between gap-10 w-[1200px] mx-auto  text-secondary-100">
-          <div  className='w-1/3 p-10 rounded-md shadow-xl -translate-y-1/2 text-center bg-white/80' >
+        <div className="flex flex-col justify-between gap-10 px-3 mx-auto  text-secondary-100 lg:w-11/12 lg:flex-row "
+       
+        >
+          <motion.div className='box w-full p-10 rounded-md shadow-xl  text-center -translate-y-1/2 bg-white/80  md:mx-auto md:w-3/4 lg:w-full '
+            variants={ leftCardAnimate }
+          >
             <h3 className='text-2xl font-semibold tracking-wide'>VISION</h3>
             <p className='w-3/2 tracking-wide  pt-3 mx-auto text-center flex justify-center  text-secondary-200'>To become a well-known, Africa wide Real Estate developer and a leading multi-disciplinary national company</p>
-          </div>
+          </motion.div>
           
-          <div  className='w-1/3 p-10 rounded-md shadow-xl -translate-y-1/2 text-center bg-white/80'>
+          <motion.div className='box w-full p-10 rounded-md shadow-xl  text-center -translate-y-1/2 bg-white/80  md:mx-auto md:w-3/4 lg:w-full'
+            variants={ middleCardAnimate }
+
+          >
             <h3 className='text-2xl  font-semibold tracking-wide'>MISSION</h3>
             <p className='w-3/2 tracking-wide pt-3 mx-auto text-center flex justify-center  text-secondary-200'>
               To create memorable real estate and lasting relationships with the goal of creating new, urbanist, walkable city with high quality of life, high design, beautiful architecture, and sense of place in culture-driven backdrop.</p>
-          </div >
-          <div className='w-1/3 p-10 rounded-md shadow-xl -translate-y-1/2 text-center bg-white/80'>
+          </motion.div >
+          <motion.div className='box  w-full p-10 rounded-md shadow-xl  text-center -translate-y-1/2 bg-white/80  md:mx-auto md:w-3/4 lg:w-full'
+            variants={ rightCardAnimate }
+          >
             <h3 className='text-2xl  font-semibold tracking-wide'>VALUES</h3>
             <ul className=' pt-3 tracking-wide  text-secondary-200 '>
               <li>Customer satisfaction</li>
@@ -100,10 +237,10 @@ const Home = () => {
               <li>Environmental friendliness</li>
             
             </ul>
-            </div>
+            </motion.div>
           
         </div>
-      </div>
+      </motion.div>
       
           {/* ***************************************************PORTFOLIO****************************************************** */}
       <HomePortfolio/>  
@@ -112,16 +249,16 @@ const Home = () => {
       
       
 
-        <div className=" w-full  pb-20                                 z-10 ">
+        <div className=" w-full  pb-20 ">
           
           
-          <div className='w-[1200px] mx-auto '>
-            <h1 className='flex justify-center text-2xl text-secondary-100 py-14'>News</h1>
+          <div className='lg:w-11/12 px-3 mx-auto overflow-x-hidden'>
+            <h1 className='flex justify-center  text-secondary-100 py-14 text-4xl font-cinzel'>News</h1>
         
          
-            <Slider slidesToShow={3} pauseOnHover  autoplay swipe  >
+            <Slider slidesToShow={col} pauseOnHover  autoplay swipe  >
         <Link to="/news ">
-           <div className="slide w-11/12 relative">
+           <div className="slide  md:w-11/12 relative ">
                 <div className='relative h-full'>
                   <img src={ Office } alt="" className='w-full h-64' />
                     <div className="absolute bg-secondary-100/50  top-0 left-0 w-full h-full"></div>
@@ -132,7 +269,7 @@ const Home = () => {
       
     </Link>
         <Link to="/news ">
-           <div className="slide w-11/12 relative">
+           <div className="slide md:w-11/12 relative">
                 <div className='relative h-full'>
                   <img src={ Credit } alt="" className='w-full h-64' />
                     <div className="absolute bg-secondary-100/50  top-0 left-0 w-full h-full"></div>
@@ -146,7 +283,7 @@ const Home = () => {
             <Link to="/news ">
               
         
-           <div className="slide  w-11/12 relative">
+           <div className="slide md:w-11/12 relative">
                 <div className='relative h-full'>
                   <img src={ Upcomming } alt="" className='w-full h-64' />
                     <div className="absolute bg-secondary-100/50  top-0 left-0 w-full h-full"></div>
@@ -156,7 +293,7 @@ const Home = () => {
               </div>
     </Link>
         <Link to="/news ">
-            <div className="slide  w-11/12 relative">
+            <div className="slide md:w-11/12 relative">
                 <div className='relative h-full'>
                   <img src={ Mall } alt="" className='w-full h-64' />
                     <div className="absolute bg-secondary-100/50 top-0 left-0 w-full h-full"></div>
@@ -167,7 +304,7 @@ const Home = () => {
      
     </Link>
         <Link to="/news ">
-            <div className="slide w-11/12  relative">
+            <div className="slide md:w-11/12  relative">
                 <div className='relative h-full'>
                   <img src={ New } alt="" className='w-full h-64 object-contain' />
                     <div className="absolute bg-secondary-100/50 top-0 left-0 w-full h-full"></div>
@@ -184,15 +321,17 @@ const Home = () => {
               
 
               <FaEye size={20} className='inline' />
-            <button className='tracking-widest font-semibold focus:outline-none text-secondary-100  group-hover:text-primary-100 '>
-              VIEW MORE</button>
+            <Link to="/news" className='tracking-widest font-semibold focus:outline-none text-secondary-100  group-hover:text-primary-100 '>
+              VIEW MORE</Link>
           </div>
           
 
           </div>
       </div>
 
-      
+      <div>
+    
+      </div>
 
         </div>
         
