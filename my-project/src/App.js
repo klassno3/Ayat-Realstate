@@ -74,10 +74,7 @@ function App () {
           path: "/news",
           element:<News/>,
         },
-        {
-          path: "/cards",
-          element:<HomePortfolio/>,
-        },
+        
       ]
     
   },
