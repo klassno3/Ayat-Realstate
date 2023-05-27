@@ -1,9 +1,6 @@
 import React from 'react'
-import { FaFacebook } from "react-icons/fa"
-import { FaTwitter } from "react-icons/fa"
-import { FaYoutube } from "react-icons/fa"
-import { FaPhone } from "react-icons/fa"
-import { FaMailBulk } from "react-icons/fa"
+import { FaFacebook,FaTwitter,FaYoutube,FaMailBulk,FaPhone, } from "react-icons/fa"
+
 import { Link } from 'react-router-dom'
 
 const ContactUs = () => {
@@ -137,7 +134,7 @@ const ContactUs = () => {
            
           </div>
         </div>
-          <Link to="./register" className=" hover:bg-secondary-100 hover:text-primary-100 duration-200 hover:scale-[1.05] bg-primary-200 shadow-lg w-max mx-auto mt-14 text-secondary-100 px-10 h-10 py-6 text-tertiary flex items-center  rounded-md  tracking-widest ">REGISTER NOW</Link>
+          <Link to="/register" className=" hover:bg-secondary-100 hover:text-primary-100 duration-200 hover:scale-[1.05] bg-primary-200 shadow-lg w-max mx-auto mt-14 text-secondary-100 px-10 h-10 py-6 text-tertiary flex items-center  rounded-md  tracking-widest ">REGISTER NOW</Link>
       </div>
       
     </div>

@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import Slider from 'infinite-react-carousel';
 import Form from "../../component/form/Form"
-import { motion, variants} from "framer-motion"
+import { motion} from "framer-motion"
 
 
 

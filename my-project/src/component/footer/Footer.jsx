@@ -1,13 +1,7 @@
-import React from 'react'
+import React  , {useState,useEffect} from 'react'
+import { Link,useLocation } from "react-router-dom"
 import LogoGreen from "../../images/Logo-white.svg"
-import {FaPhone} from "react-icons/fa"
-import { FaMailBulk } from "react-icons/fa"
-import { FaFacebook } from "react-icons/fa"
-import { FaTwitter } from "react-icons/fa"
-import { FaYoutube} from "react-icons/fa"
-import {useState,useEffect} from "react"
-import { useLocation } from "react-router-dom"
-import { Link } from "react-router-dom"
+import {FaPhone, FaMailBulk, FaFacebook, FaTwitter,FaYoutube} from "react-icons/fa"
 
 const Footer = () => {
 

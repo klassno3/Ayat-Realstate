@@ -17,6 +17,7 @@ import {
   Outlet,
   RouterProvider,
 } from "react-router-dom";
+import HomePortfolio from "./component/homePortfolio/HomePortfolio"
 function App () {
   
    const [isHomePage, setIsHomePage] = useState(false);
@@ -72,6 +73,10 @@ function App () {
         {
           path: "/news",
           element:<News/>,
+        },
+        {
+          path: "/cards",
+          element:<HomePortfolio/>,
         },
       ]
     

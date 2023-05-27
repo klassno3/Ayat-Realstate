@@ -9,8 +9,7 @@ import New from "../../images/new.jpg"
 import Slider from 'infinite-react-carousel';
 import Background from "../../images/Background (2).png"
 import { Link } from 'react-router-dom';
-import { motion, variants } from "framer-motion"
-
+import { motion } from "framer-motion"
 
 
 
@@ -111,7 +110,7 @@ const Home = () => {
       {/* ***************************************************HERO****************************************************** */ }
       <div className='bg-secondary-100 '>
 
-      <div className='relative px-3 pt-36 pb-20 lg:w-11/12 lg:mx-auto lg:pt-56 lg:pb-28'>
+      <div className='relative px-3 pt-36 pb-20 lg:w-11/12 lg:mx-auto  md:pt-48 lg:pt-56 lg:pb-28'>
           <motion.div className='flex justify-center '
             transition={ {staggerChildren:0.1} }
             initial={"offScreen"}
@@ -119,7 +118,7 @@ const Home = () => {
           
        >
       <div>
-              <motion.h1 className='  text-3xl flex mx-auto text-center justify-center  tracking-widest font-cinzel text-tertiary-100 lg:text-5xl xl:text-7xl lg:justify-start'
+              <motion.h1 className='  text-4xl flex mx-auto text-center justify-center  tracking-widest font-cinzel text-tertiary-100  sm:text-5xl xl:text-7xl lg:justify-start'
                
             variants={heroAnimate}
               >AYAT REALSTATE</motion.h1>
@@ -128,7 +127,7 @@ const Home = () => {
                 variants={ heroAnimate }
               >Welcome to Ayat share Company, a fully legislated real estate 
         company based in Addis Ababa.Has handed 7,000+ Homes and Has handed 7,000+ Homes</motion.p>
-              <motion.div className="flex flex-col mt-8 gap-8 justify-center w-4/5 mx-auto sm:flex-row lg:justify-start lg:w-full xl:mt-10"
+              <motion.div className="flex flex-col mt-8 gap-8 justify-center w-3/4 mx-auto sm:flex-row lg:justify-start sm:w-full xl:mt-10"
                
                 variants={ heroAnimate }
               >
@@ -197,12 +196,12 @@ const Home = () => {
         </div>
       </motion.div>
       
-      <motion.div className='bg-primary-100 py-8 overflow-x-hidden'
+      <motion.div className='bg-primary-100 py-8 overflow-hidden'
        transition={ { staggerChildren: 0.1 } }
         initial={ "offScreen" }
         whileInView={ "onScreen" }
         viewport={ {
-          once: true, amount:1
+          once: true, amount:.5
         } }
         >
         

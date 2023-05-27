@@ -4,7 +4,7 @@ import Mall from "../../images/mall.jpg"
 import Upcomming from "../../images/upcomming.jpg"
 import Office from "../../images/office-relocation.jpg"
 import Website from "../../images/Website.jpg"
-import { motion, variants} from "framer-motion"
+import { motion} from "framer-motion"
 
 
 
@@ -90,7 +90,7 @@ const New = () => {
         initial={ "offScreen" }
         whileInView={ "onScreen" }
         viewport={ {
-          once: true, amount:.8
+          once: true, amount:.5
         } }
         >
 
@@ -135,7 +135,7 @@ const New = () => {
         initial={ "offScreen" }
         whileInView={ "onScreen" }
         viewport={ {
-          once: true, amount:.8
+          once: true, amount:.5
         } }
         >
           <motion.div className="border-4 border-primary-200 rounded-md hidden lg:block"
@@ -174,7 +174,7 @@ const New = () => {
         initial={ "offScreen" }
         whileInView={ "onScreen" }
         viewport={ {
-          once: true, amount:.8
+          once: true, amount:.5
         } }
       >
         <div className=' px-3 mx-auto md:w-11/12'>
@@ -219,7 +219,7 @@ const New = () => {
         initial={ "offScreen" }
         whileInView={ "onScreen" }
         viewport={ {
-          once: true, amount:.8
+          once: true, amount:.5
         } }
         >
           <motion.div className="border-4 border-primary-200 rounded-md hidden lg:block"

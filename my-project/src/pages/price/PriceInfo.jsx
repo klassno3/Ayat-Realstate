@@ -11,7 +11,9 @@ const PriceInfo = () => {
       <button className='px-10 py-3 bg-primary-100 text-secondary-100 rounded my-10 '>Download Price Information</button>
       <button className='px-10 py-3 bg-primary-100 text-secondary-100 rounded my-10 '>Share Form</button>
         </div>
-    </div>
+      </div>
+ 
+      
       </div>
   )
 }

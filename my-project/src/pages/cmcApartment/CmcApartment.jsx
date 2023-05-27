@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa"
 import { GrElevator } from "react-icons/gr"
 
-import { motion, variants} from "framer-motion"
+import { motion} from "framer-motion"
 
 
   const leftCardAnimate = {
