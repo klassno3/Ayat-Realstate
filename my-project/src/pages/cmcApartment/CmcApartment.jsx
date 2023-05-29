@@ -1,5 +1,5 @@
-import React, { useState} from 'react'
-// import Slider from 'infinite-react-carousel';
+import React, { useState,useEffect } from 'react'
+import Slider from 'infinite-react-carousel';
 import Form from "../../component/form/Form"
 
 
@@ -29,24 +29,24 @@ import { motion} from "framer-motion"
 
 const CmcApartment = () => {
   const [ open, setOpen ] = useState( false )
-  // const [ col, setCol ] = useState(window.innerWidth >= 1024 ? 3  : window.innerWidth >= 768 ? 2 :1  )
+  const [ col, setCol ] = useState(window.innerWidth >= 1024 ? 3  : window.innerWidth >= 768 ? 2 :1  )
 
-  // useEffect(()=>{
-  //   const handleSize = () => {
-  //     if ( window.innerWidth >= 1024 ) {
-  //       setCol( 3 )
-  //     }
-  //     else if ( window.innerWidth >= 768 ) {
-  //       setCol(2)
-  //     }
-  //     else {
-  //       setCol(1)
-  //     }
+  useEffect(()=>{
+    const handleSize = () => {
+      if ( window.innerWidth >= 1024 ) {
+        setCol( 3 )
+      }
+      else if ( window.innerWidth >= 768 ) {
+        setCol(2)
+      }
+      else {
+        setCol(1)
+      }
     
-  //   }
-  //   window.addEventListener( "resize", handleSize )
-  //   return () => window.addEventListener( "resize", handleSize );
-  // })
+    }
+    window.addEventListener( "resize", handleSize )
+    return () => window.addEventListener( "resize", handleSize );
+  })
   return (
     <div className=''>
         <div className='bg-tertiary-100 py-14'>
@@ -240,7 +240,7 @@ const CmcApartment = () => {
             <h1 className='flex justify-center text-2xl text-secondary-100 mb-10'>Floor Plan</h1>
         
          
-            {/* <Slider slidesToShow={col} pauseOnHover dot  autoplay swipe  >
+            <Slider slidesToShow={col} pauseOnHover dot  autoplay swipe  >
 
            <div className="slide w-11/12 relative">
                 <div className='relative  w-full h-full'>
@@ -335,7 +335,7 @@ const CmcApartment = () => {
               </div>
               </div>
  
-  </Slider> */}
+  </Slider>
 
 
       </div>

@@ -1,5 +1,5 @@
-import React, { useState} from 'react'
-// import Slider from 'infinite-react-carousel';
+import React, { useState,useEffect } from 'react'
+import Slider from 'infinite-react-carousel';
 import Form from "../../component/form/Form"
 import { motion} from "framer-motion"
 
@@ -13,24 +13,24 @@ import {GrElevator} from "react-icons/gr"
 
 const AyatHill = () => {
   const [ open, setOpen ] = useState( false )
-  // const [ col, setCol ] = useState(window.innerWidth >= 1024 ? 3  : window.innerWidth >= 768 ? 2 :1  )
+  const [ col, setCol ] = useState(window.innerWidth >= 1024 ? 3  : window.innerWidth >= 768 ? 2 :1  )
 
-  // useEffect(()=>{
-  //   const handleSize = () => {
-  //     if ( window.innerWidth >= 1024 ) {
-  //       setCol( 3 )
-  //     }
-  //     else if ( window.innerWidth >= 768 ) {
-  //       setCol(2)
-  //     }
-  //     else {
-  //       setCol(1)
-  //     }
+  useEffect(()=>{
+    const handleSize = () => {
+      if ( window.innerWidth >= 1024 ) {
+        setCol( 3 )
+      }
+      else if ( window.innerWidth >= 768 ) {
+        setCol(2)
+      }
+      else {
+        setCol(1)
+      }
     
-  //   }
-  //   window.addEventListener( "resize", handleSize )
-  //   return () => window.addEventListener( "resize", handleSize );
-  // } )
+    }
+    window.addEventListener( "resize", handleSize )
+    return () => window.addEventListener( "resize", handleSize );
+  } )
   
   const leftCardAnimate = {
     offScreen: {
@@ -263,7 +263,7 @@ const AyatHill = () => {
           <div className='w-10/12 mx-auto mt-14 mb-20 '>
             <h1 className='flex justify-center text-2xl text-secondary-100 mb-10'>Floor Plan</h1>
         
-{/*          
+         
             <Slider slidesToShow={col} pauseOnHover dot  autoplay swipe  >
 
            <div className="slide w-11/12 relative">
@@ -324,7 +324,7 @@ const AyatHill = () => {
      
 
   </Slider>
- */}
+
 
       </div>
        <div className=" bg-secondary-100 mt-8">
