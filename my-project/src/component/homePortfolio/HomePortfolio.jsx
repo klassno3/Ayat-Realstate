@@ -1,7 +1,6 @@
 import React, { useState }from 'react'
-import { FaSearch,FaEye } from "react-icons/fa"
+import { FaSearch} from "react-icons/fa"
 import { BsChevronDown } from "react-icons/bs"
-import { Link } from "react-router-dom"
 import {cards} from "../../data"
 import Card from "./Card"
 
@@ -113,14 +112,7 @@ const HomePortfolio = () => {
       
         
           </div>
-          <div className='group w-max flex  items-center mx-auto  hover:text-primary-100 duration-200 hover:scale-[1.03]  mt-20 gap-4'>
-              
-
-              <FaEye size={20} className='inline' />
-            <Link to="/portfolio/ayat-hill" className='tracking-widest font-semibold focus:outline-none text-secondary-100  group-hover:text-primary-100 '>
-            VIEW MORE</Link>
-          </div>
-          
+         
 
 
         </div>

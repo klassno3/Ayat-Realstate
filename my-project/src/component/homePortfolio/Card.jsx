@@ -14,7 +14,7 @@ import { motion } from "framer-motion"
      transition :{ 
               type: "spring",
        bounce: .5,
-              duration:1,
+              duration:2,
             } }
 }
 const leftCardAnimate = {
@@ -29,7 +29,7 @@ const leftCardAnimate = {
      transition :{ 
               type: "spring",
        bounce: .5,
-              duration:1,
+              duration:2,
             } }
 }
   

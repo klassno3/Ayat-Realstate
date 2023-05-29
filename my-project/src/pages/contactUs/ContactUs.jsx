@@ -1,6 +1,5 @@
 import React from 'react'
 import { FaFacebook,FaTwitter,FaYoutube,FaMailBulk,FaPhone, } from "react-icons/fa"
-
 import { Link } from 'react-router-dom'
 
 const ContactUs = () => {
@@ -11,15 +10,15 @@ const ContactUs = () => {
         <p className='text-center w-3/4 text-secondary-200 mx-auto mt-5 lg:text-xl sm:w-1/2'>Thank you for visiting AYAT REAL ESTATE. Please complete the form below, so we can provide a quick and efficient service. If this is an urgent matter please Contact our lines:</p>
       <div className='flex mt-8 mb-14 justify-center gap-4'>
 
-            <a href="https://www.facebook.com/ayatshareco/" >
-            <FaFacebook className="text-secondary-100 hover:text-primary-200" size={ 25 } />
+            <a href="https://www.facebook.com/ayatshareco/"  target="_blank" rel="noopener noreferrer" >
+            <FaFacebook className="text-secondary-100 hover:text-primary-300 hover:scale-110 duration-100 transition-all" size={ 25 } />
             </a>
       
-             <a href="https://twitter.com/ayat_share_co?lang=en" >
-            <FaTwitter  className="text-secondary-100 hover:text-primary-200" size={25}/>
+             <a href="https://twitter.com/ayat_share_co?lang=en"  target="_blank" rel="noopener noreferrer" >
+            <FaTwitter  className="text-secondary-100 hover:text-primary-300 hover:scale-110 duration-100 transition-all" size={25}/>
             </a>
-             <a href="https://www.youtube.com/@AyatRealEstate" >
-            <FaYoutube  className="text-secondary-100 hover:text-primary-200" size={25}/>
+             <a href="https://www.youtube.com/@AyatRealEstate" target="_blank" rel="noopener noreferrer"  >
+            <FaYoutube  className="text-secondary-100 hover:text-primary-300 hover:scale-110 duration-100 transition-all" size={25}/>
             </a>
           </div>
         <div className='text-center mx-auto'>

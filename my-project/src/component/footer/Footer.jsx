@@ -119,14 +119,14 @@ const Footer = () => {
 
           <div className='flex justify-center gap-4'>
 
-            <a href="https://www.facebook.com/ayatshareco/" >
+            <a href="https://www.facebook.com/ayatshareco/"  target="_blank" rel="noopener noreferrer" >
             <FaFacebook className="text-tertiary-100 hover:text-primary-200" size={ 25 } />
             </a>
        
-             <a href="https://twitter.com/ayat_share_co?lang=en" >
+             <a href="https://twitter.com/ayat_share_co?lang=en" target="_blank" rel="noopener noreferrer" >
             <FaTwitter  className="text-tertiary-100 hover:text-primary-200" size={25}/>
             </a>
-             <a href="https://www.youtube.com/@AyatRealEstate" >
+             <a href="https://www.youtube.com/@AyatRealEstate"  target="_blank" rel="noopener noreferrer">
             <FaYoutube  className="text-tertiary-100 hover:text-primary-200" size={25}/>
             </a>
           </div>

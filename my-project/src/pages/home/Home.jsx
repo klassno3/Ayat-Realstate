@@ -1,16 +1,16 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState} from 'react';
 import {FaEye} from "react-icons/fa"
 import HomePortfolio from '../../component/homePortfolio/HomePortfolio';
-import Credit from "../../images/Credit.jpg"
-import Mall from "../../images/mall.jpg"
-import Upcomming from "../../images/upcomming.jpg"
-import Office from "../../images/office-relocation.jpg"
-import New from "../../images/new.jpg"
-import Slider from 'infinite-react-carousel';
 import Background from "../../images/Background (2).png"
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion"
-
+// import Credit from "../../images/Credit.jpg"
+// import Mall from "../../images/mall.jpg"
+// import Upcomming from "../../images/upcomming.jpg"
+// import Office from "../../images/office-relocation.jpg"
+// import New from "../../images/new.jpg"
+// import Slider from 'infinite-react-carousel';
+// import Carousel from "react-elastic-carousel";
 
 
 
@@ -19,24 +19,24 @@ const Home = () => {
   const [ open, setOpen ] = useState( false )
     
  
-  const [ col, setCol ] = useState( window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1 )
+  // const [ col, setCol ] = useState( window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1 )
 
-  useEffect(()=>{
-    const handleSize = () => {
-      if ( window.innerWidth >= 1024 ) {
-        setCol( 3 )
-      }
-      else if ( window.innerWidth >= 768 ) {
-        setCol(2)
-      }
-      else {
-        setCol(1)
-      }
+  // useEffect(()=>{
+  //   const handleSize = () => {
+  //     if ( window.innerWidth >= 1024 ) {
+  //       setCol( 3 )
+  //     }
+  //     else if ( window.innerWidth >= 768 ) {
+  //       setCol(2)
+  //     }
+  //     else {
+  //       setCol(1)
+  //     }
     
-    }
-    window.addEventListener( "resize", handleSize )
-    return () => window.addEventListener( "resize", handleSize );
-  } )
+  //   }
+  //   window.addEventListener( "resize", handleSize )
+  //   return () => window.addEventListener( "resize", handleSize );
+  // } )
 
   const heroAnimate = {
     offScreen:{x:-100},
@@ -254,8 +254,8 @@ const Home = () => {
           <div className='lg:w-11/12 px-3 mx-auto overflow-x-hidden'>
             <h1 className='flex justify-center  text-secondary-100 py-14 text-4xl font-cinzel'>News</h1>
         
-         
-            <Slider slidesToShow={col} pauseOnHover  autoplay swipe  >
+{/*          
+            <Slider slidesToShow={col} pauseOnHover dot  autoplay swipe >
         <Link to="/news ">
            <div className="slide  md:w-11/12 relative ">
                 <div className='relative h-full'>
@@ -314,11 +314,9 @@ const Home = () => {
              
      
     </Link>
-  </Slider>
+  </Slider> */}
 
             <div className='group w-max flex  items-center mx-auto  hover:text-primary-200  mt-20 gap-4'>
-              
-
               <FaEye size={20} className='inline' />
             <Link to="/news" className='tracking-widest font-semibold focus:outline-none text-secondary-100  group-hover:text-primary-100 '>
               VIEW MORE</Link>
