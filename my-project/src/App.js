@@ -17,7 +17,6 @@ import {
   Outlet,
   RouterProvider,
 } from "react-router-dom";
-import HomePortfolio from "./component/homePortfolio/HomePortfolio"
 function App () {
   
    const [isHomePage, setIsHomePage] = useState(false);
