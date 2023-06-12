@@ -9,7 +9,7 @@ const Navbar = () => {
 
   const [ active, setActive ] = useState( false );
   const location = useLocation()
-   const isHome = location.pathname === '/';
+   const isHome = location.pathname === '/Ayat-Realstate';
   const [ selectedTab, setSelectedTab ] = useState( "home" )
 
   const isActive = () => {
@@ -25,7 +25,7 @@ const Navbar = () => {
   
   
   useEffect( () => {
-    if ( location.pathname === "/" ) {
+    if ( location.pathname === "/Ayat-Realstate" ) {
       setSelectedTab( "home" )
     }
     else if ( location.pathname === "/news" ) {
@@ -95,7 +95,7 @@ const Navbar = () => {
               >
 
            
-                <RouterLink to="/" onClick={ () => setSelectedTab( 'Home' ) } className={ `group ${ selectedTab === 'home' ? 'font-semibold' : ''
+                <RouterLink to="/Ayat-Realstate" onClick={ () => setSelectedTab( 'Home' ) } className={ `group ${ selectedTab === 'home' ? 'font-semibold' : ''
                   }` }>
                   Home
                   <div className={ `border-b-4 border-solid opacity-0 border-primary-200 rounded-lg w-1/4 group-hover:opacity-100 ${ selectedTab === 'home' ? "opacity-100" : '' }` }></div>
@@ -136,7 +136,7 @@ const Navbar = () => {
               <div className="hidden md:flex xl:gap-14 lg:gap-10 md:gap-5">
    
 
-                <RouterLink to="/" onClick={ () => setSelectedTab( 'Home' ) } className={ `group ${ selectedTab === 'home' ? 'font-semibold' : ''
+                <RouterLink to="/Ayat-Realstate" onClick={ () => setSelectedTab( 'Home' ) } className={ `group ${ selectedTab === 'home' ? 'font-semibold' : ''
                   }` }>
                   Home
                   <div className={ `border-b-4 border-solid opacity-0 border-primary-200 rounded-lg w-1/2 group-hover:opacity-100 ${ selectedTab === 'home' ? "opacity-100" : '' }` }></div>

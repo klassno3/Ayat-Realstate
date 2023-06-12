@@ -13,7 +13,7 @@ export const cards = [
   {
     id:2,
     title: "CMC BUSINESS OUTLETS",
-    description:"In this apartment-cum-business building, offices’ and other businesses’ conducting space is available at four floors, from ground-street level-up. These space is designed with cutting-edge...",
+    description:"In this apartment-cum-business building, offices and other businesses conducting space is available at four floors, from ground-street level-up. These space is designed with cutting-edge...",
     Link: "/portfolio/cmc-business",
     imageLink: "https://i.pinimg.com/564x/bb/92/6d/bb926def24d47ef1ff90be968ebe268f.jpg",
     animateImg:"rightCardAnimate",
